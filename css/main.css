@@ -2,6 +2,8 @@ body {
 	background-color: #01a3d6;
 	color: #fff;
 	font-family: thaisanslite, "Courier New", Times;
+	margin: 20px 0px 20px 0px;
+	font-size: 20px;
 }
 img {
 	width: 360px;
@@ -37,10 +39,21 @@ button:hover {
 	background-color: #c9302c;
 	border-color: #ac2925;
 }
+select, option {
+	width: 100%;
+	padding: 3px;
+	border-radius: 5px;
+	display: block;
+	box-sizing: border-box;
+	font-family: thaisanslite;
+	font-size: 20px;
+}
 .container {
 	width: 400px;
-	text-align: center;
 	margin: auto;
+}
+#header, #info, #btncontainer {
+	text-align: center;
 }
 .foodcenter {
 	width: 100px;
@@ -49,7 +62,7 @@ button:hover {
 #info {
 	padding: 20px 0px 20px 0px;
 }
-#form {
+#selform {
 	padding: 0px 0px 10px 0px;
 	display: none;
 }

@@ -2,7 +2,7 @@ function animateRotate(d){
     var elem = $(".foodcenter");
 
     $({deg: 0}).animate({deg: d}, {
-        duration: 2000,
+        duration: 1500,
         step: function(now){
             op = 1-now/(d-360)
             elem.css({
@@ -10,9 +10,9 @@ function animateRotate(d){
             });
         }
     });
-    $('.foodcenter').hide(2000);
-    $('#info').slideUp(2000);
-    $('#form').slideDown(2000);
+    $('.foodcenter').hide(1500);
+    $('#info').slideUp(1500);
+    $('#selform').slideDown(1500);
     $('#btngen').text("GENERATE");
 }
 $('#btngen').click(function() {

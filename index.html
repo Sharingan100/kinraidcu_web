@@ -10,7 +10,7 @@
 <body>
 	<form>
 		<div class="container">
-			<div class="header">
+			<div id="header">
 				<img src="img/logo.png">
 			</div>
 			<div id="info">
@@ -21,7 +21,7 @@
 				<img src="img/foodicon_5.gif" class="foodcenter">
 				<img src="img/foodicon_6.gif" class="foodcenter">
 			</div>
-			<div id="form" class="container">
+			<div id="selform">
 				<label>
 					Location:
 					<select name="location">
@@ -34,7 +34,9 @@
 						<option>คณะนิเทศศาสตร์-นิติศาสตร์</option>
 						<option>รัฐศาสตร์</option>
 						<option>หอใน</option>
-					</select><br>
+					</select>
+				</label>
+				<label>
 					Food type:
 					<select name="foodtype">
 						<option>กินอะไรก็ได้</option>
@@ -45,7 +47,9 @@
 					</select>
 				</label>
 			</div>
-			<button id="btngen" type="button">กินอะไรดี?</button>
+			<div id="btncontainer">
+				<button id="btngen" type="button">กินอะไรดี?</button>
+			</div>
 		</div>
 	</form>
 	<script src="js/spin.js"></script>
