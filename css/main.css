@@ -1,0 +1,73 @@
+body {
+	background-color: #01a3d6;
+	color: #fff;
+	font-family: thaisanslite, "Courier New", Times;
+}
+img {
+	width: 360px;
+}
+button {
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    width: 280px;
+	font-size: 1.2em;
+	transition: all 1s linear;
+}
+button:hover {
+	background-color: #c9302c;
+	border-color: #ac2925;
+}
+.container {
+	width: 400px;
+	text-align: center;
+	margin: auto;
+}
+.foodcenter {
+	width: 100px;
+	padding: 5px;
+}
+#info {
+	padding: 20px 0px 20px 0px;
+}
+#form {
+	padding: 0px 0px 10px 0px;
+	display: none;
+}
+button:active {
+	opacity: 0;
+}
+@font-face {
+	font-family: thaisanslite;
+	src: url(../fonts/thaisanslite_r1.ttf);
+}
+@media only screen and (max-width: 400px) {
+	img {
+		width: 90%;
+	}
+	button {
+		width: 70%;
+	}
+	.foodcenter {
+		width: 25%;
+	}
+}
