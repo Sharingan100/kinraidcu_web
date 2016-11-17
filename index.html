@@ -24,34 +24,50 @@
 			<div id="selform">
 				<label>
 					Location:
-					<select name="location">
-						<option>ที่ไหนก็ได้</option>
-						<option>คณะวิศวกรรมศาสตร์</option>
-						<option>คณะอักษรศาสตร์</option>
-						<option>ตึกมหิตลาธิเบศร์</option>
-						<option>คณะพาณิชยศาสตร์และการบัญชี</option>
-						<option>ตึกจุลจักรพงษ์</option>
-						<option>คณะนิเทศศาสตร์-นิติศาสตร์</option>
-						<option>รัฐศาสตร์</option>
-						<option>หอใน</option>
+					<select id="location" name="location">
+						<option value="any">ที่ไหนก็ได้</option>
+						<option class="disabled" disabled="disabled">ฝั่งใหญ่</option>
+						<option value="eng">&nbsp;&nbsp;คณะวิศวกรรมศาสตร์</option>
+						<option value="art">&nbsp;&nbsp;คณะอักษรศาสตร์</option>
+						<option value="acc">&nbsp;&nbsp;คณะพาณิชยศาสตร์และการบัญชี</option>
+						<option value="pol">&nbsp;&nbsp;คณะรัฐศาสตร์</option>
+						<option value="mahit">&nbsp;&nbsp;ตึกมหิตลาธิเบศร์</option>
+						<option value="jool">&nbsp;&nbsp;ตึกจุลจักรพงษ์</option>
+						<option disabled="disabled">ฝั่งเล็ก</option>
+						<option value="law">&nbsp;&nbsp;คณะนิเทศศาสตร์-นิติศาสตร์</option>
+						<option value="edu">&nbsp;&nbsp;คณะครุศาสตร์</option>
+						<option value="dorm">&nbsp;&nbsp;หอใน</option>
+						<option disabled="disabled">อื่นๆ</option>
+						<option value="book">&nbsp;&nbsp;ตึกวิทยกิตติ์ (ศูนย์หนังสือจุฬาฯ)</option>
+						<option value="med">&nbsp;&nbsp;คณะแพทยศาสตร์</option>
 					</select>
 				</label>
 				<label>
 					Food type:
-					<select name="foodtype">
-						<option>กินอะไรก็ได้</option>
-						<option>อาหารจานเดียว</option>
-						<option>ก๋วยเตี๋ยว</option>
-						<option>ข้าวราดแกง</option>
-						<option>อาหารตามสั่ง</option>
+					<select id="foodtype" name="foodtype">
+						<option value="any">กินอะไรก็ได้</option>
+						<option value="single">อาหารจานเดียว</option>
+						<option value="noodle">ก๋วยเตี๋ยว</option>
+						<option value="stew">ข้าวราดแกง</option>
+						<option value="steak">สเต็ก</option>
+						<option value="order">อาหารตามสั่ง</option>
+						<option value="drink">เครื่องดื่ม</option>
 					</select>
 				</label>
 			</div>
 			<div id="btncontainer">
-				<button id="btngen" type="button">กินอะไรดี?</button>
+				<button id="btngen" func="toform" type="button">กินอะไรดี?</button>
+			</div>
+			<div id="restaurant">
+				<h3 id="resname"></h3>
+				<p><img id="resimg" style="width:100%" src="" alt="" /></p>
+				<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
+				<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
+				<p><strong>เมนูแนะนำ:</strong> <span id="ressug"></span></p>
 			</div>
 		</div>
 	</form>
-	<script src="js/spin.js"></script>
+	<div id="response"></div>
+	<script src="js/main.js"></script>
 </body>
 </html>
