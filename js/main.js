@@ -32,6 +32,7 @@ $('#btngen').click(function() {
           var len = data.length;
           if (len == 0) {
             $('#resname').text("ไม่มีโว้ยยย");
+            $('#resinfo').slideUp("fast");
             $('#restaurant').slideDown("fast");
           }
           else {
@@ -43,6 +44,7 @@ $('#btngen').click(function() {
             var ressug = data[rand]['suggested'];
             switch (data[rand]['faculty']) {
               case "eng": resloctext = "คณะวิศวกรรมศาสตร์"; break;
+              case "art": resloctext = "คณะอักษรศาสตร์"; break;
             }
             switch (data[rand]['type']) {
               case "single": restypetext = "อาหารจานเดียว"; break;
@@ -50,9 +52,11 @@ $('#btngen').click(function() {
               case "stew": restypetext = "ข้าวราดแกง"; break;
               case "steak": restypetext = "สเต็ก"; break;
               case "order": restypetext = "อาหารตามสั่ง"; break;
+              case "esan": restypetext = "อาหารอีสาน"; break;
               case "drink": restypetext = "เครื่องดื่ม"; break;
             }
             $('#resimg').attr("src", "img/restaurant/"+resimg);
+            $('#resinfo').slideDown("fast");
             $('#resloc').text(resloctext);
             $('#restype').text(restypetext);
             $('#ressug').text(ressug);

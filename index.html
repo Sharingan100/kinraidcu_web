@@ -11,7 +11,7 @@
 	<form>
 		<div class="container">
 			<div id="header">
-				<img src="img/logo.png">
+				<img class="logo" src="img/logo.png">
 			</div>
 			<div id="info">
 				<img src="img/foodicon_1.gif" class="foodcenter">
@@ -51,6 +51,7 @@
 						<option value="stew">ข้าวราดแกง</option>
 						<option value="steak">สเต็ก</option>
 						<option value="order">อาหารตามสั่ง</option>
+						<option value="esan">อาหารอีสาน</option>
 						<option value="drink">เครื่องดื่ม</option>
 					</select>
 				</label>
@@ -59,11 +60,13 @@
 				<button id="btngen" func="toform" type="button">กินอะไรดี?</button>
 			</div>
 			<div id="restaurant">
-				<h3 id="resname"></h3>
-				<p><img id="resimg" style="width:100%" src="" alt="" /></p>
-				<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
-				<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
-				<p><strong>เมนูแนะนำ:</strong> <span id="ressug"></span></p>
+				<h3><span id="resname"></span> <img src="img/stars.png" width="100" style="float:right;" alt="" /></h3>
+				<div id="resinfo">
+					<p><img id="resimg" style="width:100%" src="" alt="" /></p>
+					<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
+					<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
+					<p><strong>เมนูแนะนำ:</strong> <span id="ressug"></span></p>
+				</div>
 			</div>
 		</div>
 	</form>

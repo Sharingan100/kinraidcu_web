@@ -5,12 +5,12 @@ body {
 	margin: 20px 0px 20px 0px;
 	font-size: 20px;
 }
+.logo {
+	width: 360px;
+}
 h1,h2,h3,p {
 	margin: 0px;
 	padding: 0px;
-}
-img {
-	width: 360px;
 }
 button {
 	display: inline-block;
@@ -74,7 +74,7 @@ select, option {
 	display: none;
 }
 #restaurant {
-	margin: 10px;
+	margin: 20px;
 	padding: 10px;
 	border-radius: 5px;
 	color: #000;
@@ -92,7 +92,7 @@ button:active {
 	src: url(../fonts/thaisanslite_r1.ttf);
 }
 @media only screen and (max-width: 400px) {
-	img {
+	.logo {
 		width: 90%;
 	}
 	button {
