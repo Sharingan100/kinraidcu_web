@@ -54,7 +54,7 @@ $('#btngen').click(function() {
           var restype = newdata[rand]['type'];
           var resloctext, restypetext;
           var resimg = newdata[rand]['img_src'];
-          var ressug = newdata[rand]['suggested'];
+          var ressug = newdata[rand]['suggestedmenu'];
           switch (newdata[rand]['faculty']) {
             case "eng": resloctext = "คณะวิศวกรรมศาสตร์"; break;
             case "art": resloctext = "คณะอักษรศาสตร์"; break;
@@ -73,11 +73,11 @@ $('#btngen').click(function() {
           $('#resloc').text(resloctext);
           $('#restype').text(restypetext);
           if (ressug != null) {
-            $('#ressug').show("fast");
+            $('#ressug_p').show("fast");
             $('#ressug').text(ressug);
           }
           else {
-            $('#ressug').hide("fast");
+            $('#ressug_p').hide("fast");
           }
           $('#restaurant').slideDown("fast");
         }
