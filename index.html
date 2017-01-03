@@ -4,11 +4,90 @@
 	<meta charset="utf-8">
 	<title>KinraiD</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<script src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<img src="img/loading.gif" alt="" class="loading" />
+	<nav class="navbar navbar-inverse navbar-static-top">
+  	<div class="container-fluid">
+    	<div class="navbar-header">
+      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kinraidnav">
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+      	<a class="navbar-brand" href="#">KinraiD CU</a>
+    	</div>
+    	<div class="collapse navbar-collapse" id="kinraidnav">
+      	<ul class="nav navbar-nav">
+        	<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        	<li><a href="#">Map</a></li>
+      	</ul>
+      	<ul class="nav navbar-nav navbar-right">
+        	<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	</ul>
+    	</div>
+  	</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<form>
+					<div class="form-group">
+						<label for="location">Location:</label>
+						<select id="location" name="location" class="form-control">
+							<option value="any">ที่ไหนก็ได้</option>
+							<option class="disabled" disabled="disabled">ฝั่งใหญ่</option>
+							<option value="eng">&nbsp;&nbsp;คณะวิศวกรรมศาสตร์</option>
+							<option value="art">&nbsp;&nbsp;คณะอักษรศาสตร์</option>
+							<option value="acc">&nbsp;&nbsp;คณะพาณิชยศาสตร์และการบัญชี</option>
+							<option value="pol">&nbsp;&nbsp;คณะรัฐศาสตร์</option>
+							<option value="mahit">&nbsp;&nbsp;ตึกมหิตลาธิเบศร์</option>
+							<option value="jool">&nbsp;&nbsp;ตึกจุลจักรพงษ์</option>
+							<option disabled="disabled">ฝั่งเล็ก</option>
+							<option value="law">&nbsp;&nbsp;คณะนิเทศศาสตร์-นิติศาสตร์</option>
+							<option value="edu">&nbsp;&nbsp;คณะครุศาสตร์</option>
+							<option value="dorm">&nbsp;&nbsp;หอใน</option>
+							<option disabled="disabled">อื่นๆ</option>
+							<option value="book">&nbsp;&nbsp;ตึกวิทยกิตติ์ (ศูนย์หนังสือจุฬาฯ)</option>
+							<option value="med">&nbsp;&nbsp;คณะแพทยศาสตร์</option>
+						</select>
+					</div>
+					<label for="foodtype">Food type:</label>
+					<select id="foodtype" name="foodtype" class="form-control">
+						<option value="any">กินอะไรก็ได้</option>
+						<option value="single">อาหารจานเดียว</option>
+						<option value="noodle">ก๋วยเตี๋ยว</option>
+						<option value="stew">ข้าวราดแกง</option>
+						<option value="steak">สเต็ก</option>
+						<option value="order">อาหารตามสั่ง</option>
+						<option value="esan">อาหารอีสาน</option>
+						<option value="drink">เครื่องดื่ม</option>
+					</select>
+					<div class="btn-group" role="group" style="margin-top:10px;">
+						<button id="btngen" func="togen" type="button" class="btn btn-primary">GENERATE</button>
+						<button id="btnreset" type="reset" class="btn btn-default">RESET</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-4">
+				<div id="restaurant">
+					<h4><span id="resname"></span> <img src="img/stars.png" width="100" style="float:right;padding-top:5px;" alt="" /></h4>
+					<div id="resinfo">
+						<p><img id="resimg" style="width:100%" src="" alt="" /></p>
+						<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
+						<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
+						<p id="ressug_p"><strong>เมนูแนะนำ:</strong> <span id="ressug"></span></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+
+			</div>
+		</div>
+	</div>
+	<!--
 	<form id="whole">
 		<div class="container">
 			<div id="header">
@@ -23,55 +102,12 @@
 				<img src="img/foodicon_6.gif" class="foodcenter">
 			</div>
 			<div id="selform">
-				<label>
-					Location:
-					<select id="location" name="location">
-						<option value="any">ที่ไหนก็ได้</option>
-						<option class="disabled" disabled="disabled">ฝั่งใหญ่</option>
-						<option value="eng">&nbsp;&nbsp;คณะวิศวกรรมศาสตร์</option>
-						<option value="art">&nbsp;&nbsp;คณะอักษรศาสตร์</option>
-						<option value="acc">&nbsp;&nbsp;คณะพาณิชยศาสตร์และการบัญชี</option>
-						<option value="pol">&nbsp;&nbsp;คณะรัฐศาสตร์</option>
-						<option value="mahit">&nbsp;&nbsp;ตึกมหิตลาธิเบศร์</option>
-						<option value="jool">&nbsp;&nbsp;ตึกจุลจักรพงษ์</option>
-						<option disabled="disabled">ฝั่งเล็ก</option>
-						<option value="law">&nbsp;&nbsp;คณะนิเทศศาสตร์-นิติศาสตร์</option>
-						<option value="edu">&nbsp;&nbsp;คณะครุศาสตร์</option>
-						<option value="dorm">&nbsp;&nbsp;หอใน</option>
-						<option disabled="disabled">อื่นๆ</option>
-						<option value="book">&nbsp;&nbsp;ตึกวิทยกิตติ์ (ศูนย์หนังสือจุฬาฯ)</option>
-						<option value="med">&nbsp;&nbsp;คณะแพทยศาสตร์</option>
-					</select>
-				</label>
-				<label>
-					Food type:
-					<select id="foodtype" name="foodtype">
-						<option value="any">กินอะไรก็ได้</option>
-						<option value="single">อาหารจานเดียว</option>
-						<option value="noodle">ก๋วยเตี๋ยว</option>
-						<option value="stew">ข้าวราดแกง</option>
-						<option value="steak">สเต็ก</option>
-						<option value="order">อาหารตามสั่ง</option>
-						<option value="esan">อาหารอีสาน</option>
-						<option value="drink">เครื่องดื่ม</option>
-					</select>
-				</label>
 			</div>
 			<div id="btncontainer">
-				<button id="btngen" func="toform" type="button">กินอะไรดี?</button>
-			</div>
-			<div id="restaurant">
-				<h3><span id="resname"></span> <img src="img/stars.png" width="100" style="float:right;padding-top:5px;" alt="" /></h3>
-				<div id="resinfo">
-					<p><img id="resimg" style="width:100%" src="" alt="" /></p>
-					<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
-					<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
-					<p id="ressug_p"><strong>เมนูแนะนำ:</strong> <span id="ressug"></span></p>
-				</div>
 			</div>
 		</div>
 	</form>
-	<div id="response"></div>
+	-->
 	<script src="js/main.js"></script>
 </body>
 </html>

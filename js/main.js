@@ -1,7 +1,7 @@
 var data,newdata,len,lenall;
 $(document).ready(function() {
-  $('#response').load("php/viewrestaurant.php", function(r) {
-    data = JSON.parse(r);
+  $.get("php/viewrestaurant.php", function(r) {
+    data = $.parseJSON(JSON.stringify(r));
     lenall = data.length;
   });
 });
