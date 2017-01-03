@@ -1,18 +1,14 @@
+var data,newdata,len,lenall;
 $(document).ready(function() {
-  $('#response').load("data.json", function(r) {
+  $('#response').load("php/viewrestaurant.php", function(r) {
     data = JSON.parse(r);
     lenall = data.length;
-    image = [];
-    for (i=0;i<lenall;i++) {
-      image.push("img/restaurant/"+data[i]['img_src']);
-    }
-    preloadimage(image);
   });
 });
 $(window).on('load', function() {
-  loaded();
+  $('.loading').hide("slow");
+  $('#whole').fadeIn("slow");
 });
-var data,newdata,len,lenall,image;
 function animateRotate(d){
     var elem = $(".foodcenter");
 
@@ -30,15 +26,6 @@ function animateRotate(d){
     $('#selform').slideDown(1500);
     $('#btngen').text("GENERATE");
     $('#btngen').attr("func", "togen");
-}
-function preloadimage(arr) {
-  $(arr).each(function() {
-    $('<img/>')[0].src = this;
-  });
-}
-function loaded() {
-  $('.loading').hide("slow");
-  $('#whole').fadeIn("slow");
 }
 $('#btngen').click(function() {
     if ($(this).attr("func") == "toform") {
@@ -67,7 +54,7 @@ $('#btngen').click(function() {
           var restype = newdata[rand]['type'];
           var resloctext, restypetext;
           var resimg = newdata[rand]['img_src'];
-          var ressug = newdata[rand]['suggested'];
+          var ressug = newdata[rand]['suggestedmenu'];
           switch (newdata[rand]['faculty']) {
             case "eng": resloctext = "คณะวิศวกรรมศาสตร์"; break;
             case "art": resloctext = "คณะอักษรศาสตร์"; break;
@@ -85,7 +72,13 @@ $('#btngen').click(function() {
           $('#resinfo').slideDown("fast");
           $('#resloc').text(resloctext);
           $('#restype').text(restypetext);
-          $('#ressug').text(ressug);
+          if (ressug != null) {
+            $('#ressug_p').show("fast");
+            $('#ressug').text(ressug);
+          }
+          else {
+            $('#ressug_p').hide("fast");
+          }
           $('#restaurant').slideDown("fast");
         }
     }
