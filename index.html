@@ -63,7 +63,7 @@
 								</div>
 								<label for="foodtype">Food type:</label>
 								<select id="foodtype" name="foodtype" class="form-control">
-									<option value="any">กินอะไรก็ได้</option>
+									<option value="any">อาหารอะไรก็ได้</option>
 									<option value="single">อาหารจานเดียว</option>
 									<option value="noodle">ก๋วยเตี๋ยว</option>
 									<option value="stew">ข้าวราดแกง</option>
@@ -89,9 +89,10 @@
 				<div id="restaurant" class="panel panel-primary">
 					<div class="panel-heading">
 						<span id="resname"></span>
+						<span id="closerestaurant" class="glyphicon glyphicon-remove pull-right" style="padding:4px 0px 0px 0px;cursor:pointer;"></span>
 					</div>
-					<div class="panel-body">
-						<div id="resinfo">
+					<div class="panel-collapse collapse in" id="resinfo">
+						<div class="panel-body">
 							<p><img id="resimg" style="width:100%" src="" alt="" /></p>
 							<p><strong>สถานที่:</strong> <span id="resloc"></span></p>
 							<p><strong>ชนิดอาหาร:</strong> <span id="restype"></span></p>
@@ -118,10 +119,6 @@
 				<img src="img/foodicon_4.png" class="foodcenter">
 				<img src="img/foodicon_5.gif" class="foodcenter">
 				<img src="img/foodicon_6.gif" class="foodcenter">
-			</div>
-			<div id="selform">
-			</div>
-			<div id="btncontainer">
 			</div>
 		</div>
 	</form>

@@ -27,6 +27,10 @@ function animateRotate(d){
     $('#btngen').text("GENERATE");
     $('#btngen').attr("func", "togen");
 }
+function reset() {
+  $('#filterbody').collapse("show");
+  $('#btngen').text("GENERATE");
+}
 $('#btngen').click(function() {
   var loc = $("#location").val();
   var type = $("#foodtype").val();
@@ -76,9 +80,14 @@ $('#btngen').click(function() {
       $('#ressug_p').hide("fast");
     }
     $('#restaurant').slideDown("fast");
+    $('#filterbody').collapse("hide");
+    $('#btngen').text("RE-GENERATE");
   }
-  $('#filterbody').collapse('hide');
 });
 $('#btnreset').click(function() {
-  $('#filterbody').collapse('show');
+  reset();
+});
+$('#closerestaurant').click(function() {
+  $('#restaurant').slideUp("fast");
+  reset();
 });
