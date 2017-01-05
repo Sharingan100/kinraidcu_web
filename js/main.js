@@ -1,4 +1,5 @@
 var data,newdata,len,lenall;
+var filterforceopen = false;
 $(document).ready(function() {
   $.get("php/viewrestaurant.php", function(r) {
     data = $.parseJSON(JSON.stringify(r));
@@ -30,7 +31,16 @@ function animateRotate(d){
 function reset() {
   $('#filterbody').collapse("show");
   $('#btngen').text("GENERATE");
+  filterforceopen = false;
 }
+$('#filterheading').click(function() {
+  if (filterforceopen) {
+    filterforceopen = false;
+  }
+  else {
+    filterforceopen = true;
+  }
+});
 $('#btngen').click(function() {
   var loc = $("#location").val();
   var type = $("#foodtype").val();
@@ -80,7 +90,9 @@ $('#btngen').click(function() {
       $('#ressug_p').hide("fast");
     }
     $('#restaurant').slideDown("fast");
-    $('#filterbody').collapse("hide");
+    if (!filterforceopen) {
+      $('#filterbody').collapse("hide");
+    }
     $('#btngen').text("RE-GENERATE");
   }
 });
